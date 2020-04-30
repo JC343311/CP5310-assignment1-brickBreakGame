@@ -5,18 +5,18 @@ var theCanvas = document.getElementById("brickCanvas"),
 theCanvas.width = 500;
 theCanvas.height = 500;
 
-var movingBlockW = 100;
-var movingBlockH = 20;
+var movingBlockW = 100; //width of the paddle/moving block
+var movingBlockH = 20; //height of the paddle/moving block
 var blockMarginBottom = 10;
-var ballR = 8;
+var ballR = 8; //radium of the ball
 var playerLife = 3;
 var level = 1;
-var lastLevel = 3;
+var lastLevel = 3; //total number of levels in the game
 var leftButton = false, rightButton = false;
 var point = 0;
-const breakPoint = 10;
+const breakPoint = 10; //points per block broken by the ball
 var gameOver = false;
-let playAgainMessage = 'Game Over! Play again by losing all lives'
+let playAgainMessage = 'You win! Wait for 5 seconds if you want to play again'
 let losePlayAgain = 'Game Over! Please try again'
 
 //To make moving brick block
@@ -126,7 +126,7 @@ function resetBall(){
     ball.dy = -3;
 }
 
-//Load image through the loop
+//Load image through the loop to show animation
 const backImage = new Image();
 backImage.src = "light-blue-background.png";
 
@@ -184,7 +184,7 @@ function ballBreakingBlockCollision(){
                     ball.y + ball.r > block.y && ball.y - ball.r < block.y + breakingBlock.height) {
                     block.status = false;
                     ball.dy = -ball.dy;
-                    point += breakPoint;
+                    point += breakPoint; //add point for each block broken
                 }
             }
         }
