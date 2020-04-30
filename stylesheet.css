@@ -1,0 +1,13 @@
+body{
+	background-color: floralwhite;
+}
+
+#brickCanvas{
+	width: 500px;
+	height: 500px;
+	background-color: aliceblue;
+	border-bottom: black solid 5px;
+	border-top: black solid 5px;
+	border-right: black solid 5px;
+	border-left: black solid 5px;
+}
